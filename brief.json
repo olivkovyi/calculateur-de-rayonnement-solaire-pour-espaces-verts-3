@@ -1,0 +1,278 @@
+{
+  "run_id": "run-1775081429672",
+  "job_index": 3,
+  "params": {
+    "owner_user_id": "user-1774822953462",
+    "owner_username": "admin",
+    "owner_display_name": "Administrator",
+    "count": 3,
+    "archetype": "calculator",
+    "market": "France",
+    "language": "fr",
+    "country": "FR",
+    "brief": "Entrez votre localisation et les caractéristiques de votre espace (orientation, obstructions). Le calculateur…",
+    "notes": "Évaluez l'ensoleillement de votre jardin ou balcon pour choisir les plantes les plus adaptées. Un outil essentiel pour les jardiniers urbains et les paysagistes.\nOptimise le choix des plantes pour garantir leur croissance et leur floraison, réduisant le besoin d'entretien et d'arrosage excessif.",
+    "import_notes": "",
+    "mode": "production",
+    "run_kind": "generated_batch",
+    "publish_target": "railway",
+    "requested_publish_target": "railway",
+    "github_repo_private": true,
+    "stage_models": {
+      "ideation": "google/gemini-2.5-flash-lite:nitro",
+      "spec": "google/gemini-2.5-flash",
+      "copy": "google/gemini-2.5-flash-lite:nitro",
+      "qa": "anthropic/claude-haiku-4.5",
+      "escalation": "anthropic/claude-sonnet-4.6"
+    },
+    "archetype_display": "mixed batch",
+    "archetype_mix": [
+      "tool",
+      "generator",
+      "calculator"
+    ],
+    "forced_design_theme": "mechanical-botanical",
+    "forced_structure_preset": "metric-grid",
+    "site_idea_title": "Calculateur de Rayonnement Solaire pour Espaces Verts",
+    "site_idea_summary": "Évaluez l'ensoleillement de votre jardin ou balcon pour choisir les plantes les plus adaptées. Un outil essentiel pour les jardiniers urbains et les paysagistes."
+  },
+  "site_spec": {
+    "slug": "calculateur-de-rayonnement-solaire-pour-espaces-verts-3",
+    "theme": {
+      "name": "Mechanical Botanical",
+      "slug": "mechanical-botanical",
+      "eyebrow": "Organic Systems",
+      "family": "mechanical-botanical",
+      "moods": [
+        "organic",
+        "futuristic",
+        "balanced",
+        "fresh"
+      ],
+      "archetypes": [
+        "tool",
+        "generator",
+        "calculator"
+      ],
+      "niches": [
+        "eco tools",
+        "wellness tools",
+        "sustainability",
+        "travel tools",
+        "consumer utility"
+      ],
+      "keywords": [
+        "organic",
+        "tech",
+        "botanical",
+        "iridescent",
+        "fresh"
+      ],
+      "token_index": [
+        "balanced",
+        "botanical",
+        "calculator",
+        "consumer",
+        "eco",
+        "fresh",
+        "futuristic",
+        "generator",
+        "iridescent",
+        "mechanical",
+        "organic",
+        "sustainability",
+        "systems",
+        "tech",
+        "tool",
+        "tools",
+        "travel",
+        "utility",
+        "wellness"
+      ],
+      "font_embed": "https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap",
+      "display_font": "\"Sora\", sans-serif",
+      "body_font": "\"Manrope\", sans-serif",
+      "layout": "split",
+      "card_style": "glass",
+      "button_style": "gradient",
+      "decor_style": "orbs",
+      "hero_template": "1.08fr 0.92fr",
+      "seo_template": "1.18fr 0.82fr",
+      "feature_columns": 3,
+      "faq_columns": 3,
+      "hero_min_height": "78vh",
+      "panel_radius": "28px",
+      "card_radius": "26px",
+      "chip_radius": "999px",
+      "button_radius": "18px",
+      "outline_width": "1px",
+      "backdrop_blur": "22px",
+      "palette": {
+        "bg": "linear-gradient(145deg, #081c15 0%, #1b4332 42%, #c7f9cc 100%)",
+        "surface": "rgba(8, 28, 21, 0.74)",
+        "surface_border": "rgba(128,237,153,0.18)",
+        "text": "#f1fff4",
+        "muted": "#b7e4c7",
+        "accent": "#80ed99",
+        "accent_alt": "#72ddf7",
+        "hero_glow": "rgba(128, 237, 153, 0.18)",
+        "button_text": "#062012",
+        "panel_alt": "rgba(255,255,255,0.04)",
+        "shadow": "0 30px 88px rgba(4, 12, 8, 0.34)",
+        "input_fill": "rgba(255,255,255,0.05)"
+      }
+    },
+    "structure": {
+      "name": "Metric Grid",
+      "slug": "metric-grid",
+      "hero_variant": "command",
+      "proof_variant": "metrics",
+      "section_order": [
+        "features",
+        "seo",
+        "proof",
+        "faq"
+      ],
+      "feature_columns": 4,
+      "faq_columns": 2,
+      "family": "data-grid",
+      "moods": [
+        "technical",
+        "precise",
+        "systemic"
+      ],
+      "archetypes": [
+        "tool",
+        "calculator"
+      ],
+      "niches": [
+        "developer tools",
+        "qa",
+        "finance",
+        "analytics"
+      ],
+      "keywords": [
+        "metrics",
+        "grid",
+        "dashboard",
+        "precision"
+      ],
+      "token_index": [
+        "analytics",
+        "calculator",
+        "command",
+        "dashboard",
+        "data",
+        "developer",
+        "faq",
+        "features",
+        "finance",
+        "grid",
+        "metric",
+        "metrics",
+        "precise",
+        "precision",
+        "proof",
+        "seo",
+        "systemic",
+        "technical",
+        "tool",
+        "tools"
+      ]
+    },
+    "render_direction": "editorial-ledger",
+    "render_direction_name": "Editorial Ledger",
+    "page_blueprint": "dossier-rail",
+    "page_blueprint_name": "Dossier Rail",
+    "title": "Calculateur de Rayonnement Solaire pour Espaces Verts",
+    "tagline": "Déterminez l'Ensoleillement Idéal",
+    "description": "Évaluez l",
+    "feature_prefix": "Bloc",
+    "action": "Utiliser l'outil",
+    "cta_primary": "Calculer l'ensoleillement",
+    "cta_secondary": "Consulter la FAQ",
+    "inputs": [
+      {
+        "id": "amount",
+        "label": "Montant de base",
+        "type": "number",
+        "placeholder": "7500",
+        "weight": 1.0
+      },
+      {
+        "id": "duration",
+        "label": "Durée estimée",
+        "type": "number",
+        "placeholder": "12",
+        "weight": 0.42
+      },
+      {
+        "id": "plan",
+        "label": "Niveau de service",
+        "type": "select",
+        "options": [
+          {
+            "label": "Essentiel",
+            "value": 1.0
+          },
+          {
+            "label": "Performance",
+            "value": 1.18
+          },
+          {
+            "label": "Premium",
+            "value": 1.34
+          }
+        ],
+        "weight": 1.0
+      }
+    ],
+    "hero_metrics": [
+      {
+        "value": "Editorial Ledger",
+        "label": "Cadence"
+      },
+      {
+        "value": "3",
+        "label": "Entrées"
+      },
+      {
+        "value": "Résultat recommandé",
+        "label": "Sortie"
+      }
+    ],
+    "trust_labels": [
+      "Editorial Ledger",
+      "Calculer l'ensoleillement",
+      "Résultat recommandé",
+      "Utilitaire immédiat",
+      "Structure SEO claire"
+    ],
+    "result_label": "Résultat recommandé",
+    "result_unit": "EUR",
+    "runtime_mode": "generic_calculator",
+    "page_variant": "editorial",
+    "faq_topic": "Calculateur de Rayonnement Solaire pour Espaces Verts",
+    "faq_entries": [
+      {
+        "question": "Pourquoi utiliser cet outil pour Calculateur de Rayonnement Solaire pour Espaces Verts ?",
+        "answer": "Il aide à cadrer le besoin rapidement et à orienter vers une prochaine action claire sur le marché France."
+      },
+      {
+        "question": "Le résultat est-il immédiat ?",
+        "answer": "Oui. L'interface est pensée pour une réponse rapide, lisible et exploitable dès la première interaction."
+      },
+      {
+        "question": "Cette page est-elle adaptée au SEO ?",
+        "answer": "Oui. La structure mélange utilité, clarté éditoriale et signaux de confiance sans surcharger l'expérience."
+      }
+    ],
+    "seo_paragraphs": [
+      "Cette page capte une intention forte autour de Calculateur de Rayonnement Solaire pour Espaces Verts et la transforme en action utile pour un public situé sur France.",
+      "Le format hero-first accélère la compréhension, réduit les frictions et améliore la lisibilité sur mobile comme sur desktop.",
+      "Le socle reste volontairement simple pour faciliter les tests, la QA continue et les variations SEO."
+    ],
+    "document_html": "<!DOCTYPE html>\n<html lang=\"fr\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Calculateur de Rayonnement Solaire pour Espaces Verts | Déterminez l&#x27;Ensoleillement Idéal</title>\n    <meta name=\"description\" content=\"Évaluez l\">\n    <style>\n        :root {\n            --color-primary: #004d40; /* Dark Teal */\n            --color-secondary: #ffc107; /* Amber */\n            --color-background: #f0f4f8; /* Light Grey Blue */\n            --color-text-dark: #263238; /* Dark Grey */\n            --color-text-light: #eceff1; /* Lighter Grey Blue */\n            --color-accent: #37359e; /* Purple Blue */\n            --font-family-headline: 'Inter', sans-serif; /* Fallback */\n            --font-family-body: 'Roboto', sans-serif; /* Fallback */\n        }\n\n        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto:wght@300;400;700&display=swap');\n\n        body {\n            font-family: var(--font-family-body);\n            margin: 0;\n            padding: 0;\n            background-color: var(--color-background);\n            color: var(--color-text-dark);\n            line-height: 1.6;\n            display: flex;\n            flex-direction: column;\n            min-height: 100vh;\n        }\n\n        header {\n            background-color: var(--color-primary);\n            color: var(--color-text-light);\n            padding: 1.5rem 2rem;\n            text-align: center;\n            box-shadow: 0 2px 4px rgba(0,0,0,0.1);\n        }\n\n        header h1 {\n            font-family: var(--font-family-headline);\n            font-size: 2.5rem;\n            margin: 0;\n            line-height: 1.2;\n        }\n\n        header p {\n            font-size: 1.1rem;\n            margin-top: 0.5rem;\n            max-width: 800px;\n            margin-left: auto;\n            margin-right: auto;\n        }\n\n        main {\n            flex-grow: 1;\n            padding: 2rem;\n            display: grid;\n            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));\n            gap: 2rem;\n            max-width: 1200px;\n            margin: 2rem auto;\n        }\n\n        section {\n            background-color: #fff;\n            padding: 2rem;\n            border-radius: 8px;\n            box-shadow: 0 4px 8px rgba(0,0,0,0.05);\n        }\n\n        h2 {\n            font-family: var(--font-family-headline);\n            color: var(--color-accent);\n            font-size: 1.8rem;\n            margin-top: 0;\n            margin-bottom: 1.5rem;\n        }\n\n        .cta-section {\n            background-color: var(--color-primary);\n            color: var(--color-text-light);\n            text-align: center;\n            padding: 3rem 2rem;\n            margin-top: 3rem;\n        }\n\n        .cta-section h2 {\n            color: var(--color-secondary);\n            font-size: 2.2rem;\n        }\n\n        .cta-section p {\n            font-size: 1.2rem;\n            max-width: 800px;\n            margin: 1rem auto 2rem auto;\n        }\n\n        .button {\n            display: inline-block;\n            background-color: var(--color-secondary);\n            color: var(--color-text-dark);\n            padding: 0.8rem 1.8rem;\n            border-radius: 50px;\n            text-decoration: none;\n            font-weight: bold;\n            transition: background-color 0.3s ease;\n        }\n\n        .button:hover {\n            background-color: #ffd54f; /* Lighter Amber */\n        }\n\n        form {\n            display: flex;\n            flex-direction: column;\n            gap: 1.5rem;\n        }\n\n        .form-group {\n            display: flex;\n            flex-direction: column;\n        }\n\n        label {\n            font-weight: bold;\n            margin-bottom: 0.5rem;\n            color: var(--color-primary);\n        }\n\n        input[type=\"text\"],\n        input[type=\"number\"],\n        select {\n            padding: 0.8rem;\n            border: 1px solid #ccc;\n            border-radius: 4px;\n            font-size: 1rem;\n            background-color: var(--color-background);\n            transition: border-color 0.3s ease;\n        }\n\n        input[type=\"text\"]:focus,\n        input[type=\"number\"]:focus,\n        select:focus {\n            border-color: var(--color-accent);\n            outline: none;\n        }\n\n        #tool-submit {\n            background-color: var(--color-primary);\n            color: var(--color-text-light);\n            border: none;\n            padding: 1rem 2rem;\n            border-radius: 50px;\n            font-size: 1.1rem;\n            cursor: pointer;\n            transition: background-color 0.3s ease;\n            align-self: flex-start;\n        }\n\n        #tool-submit:hover {\n            background-color: #00695c; /* Slightly darker teal */\n        }\n\n        #tool-result {\n            margin-top: 1.5rem;\n            padding: 1rem;\n            border: 1px dashed var(--color-primary);\n            border-radius: 8px;\n            background-color: var(--color-background);\n            min-height: 100px;\n            display: flex;\n            align-items: center;\n            justify-content: center;\n            text-align: center;\n            font-size: 1.1rem;\n            font-weight: bold;\n            color: var(--color-primary);\n        }\n\n        .result-detail {\n            margin-top: 1rem;\n            padding: 0.8rem;\n            background-color: #e0f2f7;\n            border-left: 5px solid var(--color-accent);\n            border-radius: 4px;\n        }\n\n        footer {\n            background-color: var(--color-text-dark);\n            color: var(--color-text-light);\n            padding: 2rem;\n            text-align: center;\n            margin-top: 4rem;\n            font-size: 0.9rem;\n        }\n\n        .seo-text {\n            background-color: var(--color-text-light);\n            color: var(--color-text-dark);\n            padding: 2rem;\n            margin-top: 2rem;\n            border-top: 1px solid #cfd8dc;\n            font-size: 0.85rem;\n            line-height: 1.8;\n        }\n        .seo-text h3 {\n            font-family: var(--font-family-headline);\n            color: var(--color-primary);\n            font-size: 1.5rem;\n            margin-bottom: 1rem;\n        }\n        .seo-text p {\n            margin-bottom: 1rem;\n        }\n        .seo-text ul {\n            list-style: disc inside;\n            padding-left: 1rem;\n            margin-bottom: 1rem;\n        }\n        .seo-text a {\n            color: var(--color-accent);\n            text-decoration: none;\n        }\n        .seo-text a:hover {\n            text-decoration: underline;\n        }\n    </style>\n    <meta name=\"robots\" content=\"index, follow\">\n    <link rel=\"canonical\" href=\"https://calculateur-de-rayonnement-solaire-pour-espaces-verts-3.up.railway.app\">\n    <meta property=\"og:title\" content=\"Calculateur de Rayonnement Solaire pour Espaces Verts\">\n    <meta property=\"og:description\" content=\"Évaluez l\">\n    <meta property=\"og:url\" content=\"https://calculateur-de-rayonnement-solaire-pour-espaces-verts-3.up.railway.app\">\n    <meta property=\"og:type\" content=\"website\">\n    <script type=\"application/ld+json\">{\"@context\": \"https://schema.org\", \"@type\": \"WebApplication\", \"name\": \"Calculateur de Rayonnement Solaire pour Espaces Verts\", \"description\": \"Évaluez l\", \"url\": \"https://calculateur-de-rayonnement-solaire-pour-espaces-verts-3.up.railway.app\", \"applicationCategory\": \"UtilityApplication\", \"operatingSystem\": \"Web Browser\"}</script>\n</head>\n<body data-site-slug=\"calculateur-de-rayonnement-solaire-pour-espaces-verts-3\" data-runtime-mode=\"generic_calculator\">\n    <header>\n        <h1>Calculateur de Rayonnement Solaire pour Espaces Verts</h1>\n        <p>Évaluez l'ensoleillement de votre jardin ou balcon pour choisir les plantes les plus adaptées. Un outil essentiel pour les jardiniers urbains et les paysagistes.</p>\n    </header>\n\n    <main>\n        <section>\n            <h2>Déterminez l'Ensoleillement Idéal</h2>\n            <p>Notre outil vous aide à comprendre le profil solaire de votre espace, qu'il s'agisse d'un jardin, d'un balcon ou d'une terrasse. Optimisez le choix des plantes pour garantir leur croissance et leur floraison, réduisant le besoin d'entretien et d'arrosage excessif.</p>\n            <form id=\"tool-form\">\n                <div class=\"form-group\">\n                    <label for=\"localisation\">Localisation (Ville ou Code Postal) :</label>\n                    <input type=\"text\" id=\"localisation\" name=\"localisation\" placeholder=\"Ex: Paris, 75001\" required>\n                </div>\n                <div class=\"form-group\">\n                    <label for=\"orientation\">Orientation principale de l'espace :</label>\n                    <select id=\"orientation\" name=\"orientation\" required>\n                        <option value=\"\">-- Choisissez --</option>\n                        <option value=\"nord\">Nord (Ombre)</option>\n                        <option value=\"nord-est\">Nord-Est (Ombre/Mi-ombre matinale)</option>\n                        <option value=\"est\">Est (Soleil du matin)</option>\n                        <option value=\"sud-est\">Sud-Est (Soleil du matin à midi)</option>\n                        <option value=\"sud\">Sud (Plein soleil)</option>\n                        <option value=\"sud-ouest\">Sud-Ouest (Soleil de l'après-midi)</option>\n                        <option value=\"ouest\">Ouest (Soleil de l'après-midi)</option>\n                        <option value=\"nord-ouest\">Nord-Ouest (Soleil de fin d'après-midi)</option>\n                    </select>\n                </div>\n                <div class=\"form-group\">\n                    <label for=\"obstructions\">Obstructions à proximité (bâtiments, arbres, etc.) :</label>\n                    <select id=\"obstructions\" name=\"obstructions\" required>\n                        <option value=\"\">-- Choisissez --</option>\n                        <option value=\"aucune\">Aucune / Faible</option>\n                        <option value=\"partielle\">Partielle (Ombre quelques heures)</option>\n                        <option value=\"importante\">Importante (Ombre la majeure partie de la journée)</option>\n                    </select>\n                </div>\n                <div class=\"form-group\">\n                    <label for=\"surface\">Surface de l'espace (en m²) :</label>\n                    <input type=\"number\" id=\"surface\" name=\"surface\" min=\"1\" max=\"1000\" placeholder=\"Ex: 15\" required>\n                </div>\n                <button type=\"submit\" id=\"tool-submit\" data-affiliate-slot=\"solar-calc-submit\">Calculer l'ensoleillement</button>\n            </form>\n        </section>\n\n        <section>\n            <h2>Votre Analyse Solaire Personnalisée</h2>\n            <div id=\"tool-result\">\n                Les résultats de votre calcul apparaîtront ici.\n            </div>\n            <div id=\"recommandations\" style=\"display: none;\">\n                <h3>Recommandations de Plantes :</h3>\n                <div class=\"result-detail\" id=\"plant-reco\"></div>\n                <h3>Conseils d'Aménagement :</h3>\n                <div class=\"result-detail\" id=\"layout-tips\"></div>\n            </div>\n        </section>\n    </main>\n\n    <div class=\"cta-section\">\n        <h2>Prêt à Transformer Votre Espace Vert ?</h2>\n        <p>Avec une compréhension claire de l'ensoleillement, vos projets de jardinage seront couronnés de succès. Moins d'erreurs, plus de floraisons !</p>\n        <a href=\"#\" class=\"button\" data-affiliate-slot=\"learn-more-cta\">Découvrir nos guides</a>\n    </div>\n\n    <div class=\"seo-text\">\n        <h3>Optimisez Votre Jardin avec le Calculateur d'Ensoleillement</h3>\n        <p>Que vous soyez un jardinier amateur ou un paysagiste expérimenté, l'ensoleillement est la clé du succès de vos plantations. Notre <strong>calculateur de rayonnement solaire</strong> est un outil indispensable pour évaluer précisément la quantité de lumière que reçoit votre espace vert. Fini les plantes qui dépérissent faute de soleil ou qui brûlent sous une exposition excessive !</p>\n\n        <p>En France, les variations climatiques et urbaines imposent une analyse fine. Utiliser notre outil vous permet de :</p>\n        <ul>\n            <li><strong>Choisir les bonnes espèces</strong> : Découvrez quelles plantes s'épanouiront le mieux selon l'orientation de votre balcon (nord, sud, est, ouest) ou les ombres portées par les bâtiments environnants dans votre jardin parisien, marseillais ou lyonnais.</li>\n            <li><strong>Réduire la consommation d'eau</strong> : Des plantes adaptées à leur environnement nécessitent moins d'arrosage, un geste écologique et économique.</li>\n            <li><strong>Valoriser votre espace</strong> : Un jardin ou un balcon fleuri et luxuriant augmente l'attrait et la valeur de votre propriété.</li>\n            <li><strong>Gagner du temps et de l'énergie</strong> : Évitez les essais infructueux et les remplacements coûteux de végétaux.</li>\n        </ul>\n\n        <p>Notre simulateur prend en compte des paramètres cruciaux comme la <strong>localisation géographique</strong> (ville ou code postal), l'<strong>orientation cardinale</strong> de votre espace et la présence d'<strong>obstacles naturels ou architecturaux</strong>. Obtenez un diagnostic clair et des recommandations personnalisées pour transformer votre balcon urbain en oasis de verdure, ou votre jardin de banlieue en véritable havre de paix.</p>\n\n        <p>N'attendez plus pour donner à vos plantes les meilleures chances de prospérité. Calculez dès maintenant l'ensoleillement de votre espace et devenez un expert du jardinage intelligent !</p>\n    </div>\n\n    <footer>\n        <p>&copy; 2023 Calculateur de Rayonnement Solaire. Tous droits réservés.</p>\n    </footer>\n\n    <script>\n        document.getElementById('tool-form').addEventListener('submit', function(event) {\n            event.preventDefault();\n\n            const localisation = document.getElementById('localisation').value;\n            const orientation = document.getElementById('orientation').value;\n            const obstructions = document.getElementById('obstructions').value;\n            const surface = parseInt(document.getElementById('surface').value);\n\n            let ensoleillementNiveau = '';\n            let heuresSoleil = 0;\n            let recommandationsPlantes = '';\n            let conseilsAmenagement = '';\n\n            // Simple logic for solar radiation calculation and recommendations\n            switch (orientation) {\n                case 'nord':\n                    heuresSoleil = 1;\n                    ensoleillementNiveau = 'Ombre profonde à mi-ombre';\n                    recommandationsPlantes = 'Fougères, hostas, impatiens, rododendrons, camélias.';\n                    conseilsAmenagement = 'Privilégiez les plantes aimant l\\'ombre et l\\'humidité. Créez des zones de repos ombragées.';\n                    break;\n                case 'nord-est':\n                    heuresSoleil = 3;\n                    ensoleillementNiveau = 'Mi-ombre matinale';\n                    recommandationsPlantes = 'Ancolies, astilbes, pervenches, primevères, hortensias.';\n                    conseilsAmenagement = 'Profitez du soleil doux du matin. Idéal pour des petits déjeuners à l\\'abri du soleil de l\\'après-midi.';\n                    break;\n                case 'est':\n                    heuresSoleil = 4;\n                    ensoleillementNiveau = 'Soleil du matin';\n                    recommandationsPlantes = 'Roses (certaines variétés), géraniums vivaces, campanules, clématites.';\n                    conseilsAmenagement = 'Excellente orientation pour un jardin florissant, le soleil du matin est doux. Pensez aux plantes grimpantes.';\n                    break;\n                case 'sud-est':\n                    heuresSoleil = 5;\n                    ensoleillementNiveau = 'Soleil du matin à midi';\n                    recommandationsPlantes = 'Lavandes, cistes, œillets, delphiniums, pivoines.';\n                    conseilsAmenagement = 'Cette orientation offre un bon compromis. Associez plantes méditerranéennes et espèces plus classiques.';\n                    break;\n                case 'sud':\n                    heuresSoleil = 8;\n                    ensoleillementNiveau = 'Plein soleil';\n                    recommandationsPlantes = 'Olivier, laurier rose, figuier, cactus, plantes grasses, romarin, thym.';\n                    conseilsAmenagement = 'Protégez les plantes les plus fragiles de la chaleur intense. Pensez à l\\'irrigation et aux voiles d\\'ombrage légers.';\n                    break;\n                case 'sud-ouest':\n                    heuresSoleil = 6;\n                    ensoleillementNiveau = 'Soleil de l\\'après-midi';\n                    recommandationsPlantes = 'Buddleias, gaillardes, rudbeckias, sauges, graminées ornementales.';\n                    conseilsAmenagement = 'Le soleil de l\\'après-midi peut être intense, choisissez des plantes résistantes à la sécheresse ou prévoyez de l\\'ombre.';\n                    break;\n                case 'ouest':\n                    heuresSoleil = 5;\n                    ensoleillementNiveau = 'Soleil de l\\'après-midi';\n                    recommandationsPlantes = 'Hémérocalles, phlox, asters, coreopsis, chèvrefeuille.';\n                    conseilsAmenagement = 'Idéal pour profiter du soleil couchant. Mettez en place un système d\\'arrosage efficace pour gérer la chaleur de fin de journée.';\n                    break;\n                case 'nord-ouest':\n                    heuresSoleil = 2;\n                    ensoleillementNiveau = 'Soleil de fin d\\'après-midi / Mi-ombre';\n                    recommandationsPlantes = 'Hortensias, fuchsias, impatiens, primevères japonaises.';\n                    conseilsAmenagement = 'Parfait pour un coin frais l\\'après-midi. Les plantes apprécieront le soleil doux de la fin de journée.';\n                    break;\n            }\n\n            // Adjust based on obstructions\n            if (obstructions === 'partielle') {\n                heuresSoleil = Math.max(1, heuresSoleil - 2);\n                ensoleillementNiveau += ' (avec ombre partielle)';\n            } else if (obstructions === 'importante') {\n                heuresSoleil = Math.max(0, heuresSoleil - 4);\n                ensoleillementNiveau += ' (avec ombre importante)';\n                if (heuresSoleil < 1) {\n                    ensoleillementNiveau = 'Ombre très profonde';\n                    recommandationsPlantes = 'Plantes d\\'intérieur ombrophiles, quelques fougères très résistantes à l\\'ombre.';\n                    conseilsAmenagement = 'Pensez aux miroirs pour refléter la lumière ou aux plantes artificielles de qualité.';\n                }\n            }\n\n            const resultDiv = document.getElementById('tool-result');\n            const recoDiv = document.getElementById('recommandations');\n            const plantRecoDiv = document.getElementById('plant-reco');\n            const layoutTipsDiv = document.getElementById('layout-tips');\n\n            resultDiv.innerHTML = `\n                <p>Pour votre espace à <strong>${localisation}</strong>, avec une orientation <strong>${orientation}</strong> et des obstructions <strong>${obstructions}</strong>, nous estimons :</p>\n                <p style=\"font-size: 1.5rem; color: var(--color-primary);\"><strong>${heuresSoleil} heures</strong> de soleil direct par jour en moyenne.</p>\n                <p>Ce qui correspond à un niveau d'ensoleillement : <strong>${ensoleillementNiveau}</strong>.</p>\n            `;\n            plantRecoDiv.textContent = recommandationsPlantes;\n            layoutTipsDiv.textContent = conseilsAmenagement;\n            recoDiv.style.display = 'block';\n        });\n    </script>\n<div id=\"qa-smoke-result\" hidden></div>\n<script id=\"farmbuilder-affiliate-helper\">\n(function () {\n  window.__UTILITY_AFFILIATE_MAP = window.__UTILITY_AFFILIATE_MAP || {};\n  document.addEventListener(\"click\", function (event) {\n    const target = event.target.closest(\"[data-affiliate-slot]\");\n    if (!target) return;\n    const slot = target.getAttribute(\"data-affiliate-slot\");\n    const href = window.__UTILITY_AFFILIATE_MAP[slot];\n    if (!href) return;\n    if (target.tagName && target.tagName.toLowerCase() === \"a\") {\n      target.setAttribute(\"href\", href);\n      target.setAttribute(\"rel\", \"nofollow sponsored noopener noreferrer\");\n      return;\n    }\n    event.preventDefault();\n    window.open(href, \"_blank\", \"noopener\");\n  }, true);\n})();\n</script>\n<script id=\"farmbuilder-functional-qa\">\n(function () {\n  function marker() {\n    let node = document.getElementById(\"qa-smoke-result\");\n    if (node) return node;\n    node = document.createElement(\"div\");\n    node.id = \"qa-smoke-result\";\n    node.hidden = true;\n    document.body.appendChild(node);\n    return node;\n  }\n\n  function normalize(text) {\n    return String(text || \"\").replace(/\\s+/g, \" \").trim();\n  }\n\n  function findForm() {\n    return document.getElementById(\"tool-form\") || document.querySelector(\"form\");\n  }\n\n  function findResult() {\n    return (\n      document.getElementById(\"tool-result\") ||\n      document.querySelector(\"[data-result]\") ||\n      document.querySelector(\".tool-result, .result-card, .result, .results, .output, .preview, .diagnostic, .analysis\")\n    );\n  }\n\n  function resultSignature(node) {\n    if (!node) return \"\";\n    const text = normalize(node.textContent);\n    const html = normalize(node.innerHTML).slice(0, 600);\n    return `${text}||${html}`;\n  }\n\n  function resultHeadline(node) {\n    if (!node) return \"\";\n    const heading = node.querySelector(\"h1, h2, h3, strong, b\");\n    return normalize(heading ? heading.textContent : \"\");\n  }\n\n  function sampleText(field) {\n    const key = `${field.id || \"\"} ${field.name || \"\"} ${field.placeholder || \"\"}`.toLowerCase();\n    if (/email/.test(key)) return \"bonjour@example.com\";\n    if (/url|site|website|lien/.test(key)) return \"https://example.com/offre-solaire\";\n    if (/phone|tel|mobile/.test(key)) return \"0612345678\";\n    if (/ville|city|localisation|location|region|departement|postal/.test(key)) return \"Paris\";\n    if (/orientation/.test(key)) return \"sud\";\n    if (/keyword|theme|topic|sujet|subject/.test(key)) return \"energie solaire domestique\";\n    if (/titre|title/.test(key)) return \"Simulateur solaire maison\";\n    if (/nom|name|project/.test(key)) return \"Projet Horizon\";\n    if (/description|notes|content|message/.test(key)) return \"Maison individuelle exposee sud avec toiture exploitable.\";\n    return field.placeholder || \"France\";\n  }\n\n  function sampleNumber(field) {\n    const key = `${field.id || \"\"} ${field.name || \"\"}`.toLowerCase();\n    if (/inclinaison|angle|slope/.test(key)) return \"30\";\n    if (/surface|size|m2|sqm/.test(key)) return \"28\";\n    if (/annee|year/.test(key)) return \"2024\";\n    if (/prix|price|budget|cost|amount|montant/.test(key)) return \"12000\";\n    const min = Number(field.min || \"\");\n    const max = Number(field.max || \"\");\n    if (Number.isFinite(min) && Number.isFinite(max) && max >= min) {\n      return String(Math.min(max, Math.max(min, min + Math.round((max - min) * 0.35))));\n    }\n    if (Number.isFinite(min)) return String(Math.max(min, 12));\n    if (Number.isFinite(max)) return String(Math.min(max, 12));\n    return field.value || \"12\";\n  }\n\n  function applySample(field) {\n    const tag = (field.tagName || \"\").toLowerCase();\n    const type = (field.type || \"\").toLowerCase();\n    if (field.disabled) return;\n    if (tag === \"select\") {\n      const option = Array.from(field.options || []).find((item) => item.value && !item.disabled) || field.options[0];\n      if (option) field.value = option.value;\n      return;\n    }\n    if (type === \"checkbox\") {\n      field.checked = true;\n      return;\n    }\n    if (type === \"radio\") {\n      field.checked = true;\n      return;\n    }\n    if (type === \"date\") {\n      field.value = \"2026-03-01\";\n      return;\n    }\n    if (type === \"email\") {\n      field.value = \"bonjour@example.com\";\n      return;\n    }\n    if (type === \"url\") {\n      field.value = \"https://example.com/offre-solaire\";\n      return;\n    }\n    if (type === \"tel\") {\n      field.value = \"0612345678\";\n      return;\n    }\n    if (type === \"color\") {\n      field.value = \"#2f855a\";\n      return;\n    }\n    if (type === \"number\" || type === \"range\") {\n      field.value = sampleNumber(field);\n      return;\n    }\n    field.value = sampleText(field);\n  }\n\n  function stamp(status, detail, headline, primary) {\n    const node = marker();\n    node.dataset.status = status;\n    node.dataset.mode = \"native-form\";\n    node.dataset.detail = detail || \"\";\n    node.dataset.headline = headline || \"\";\n    node.dataset.primary = primary || \"\";\n    node.dataset.viewport = window.innerWidth <= 640 ? \"mobile\" : \"desktop\";\n  }\n\n  function inspectResult(before, attemptsLeft) {\n    const result = findResult();\n    if (!result) {\n      stamp(\"fail\", \"La zone de resultat est introuvable.\", \"\");\n      return;\n    }\n    const after = resultSignature(result);\n    const text = normalize(result.textContent);\n    if (after && after !== before && text.length >= 24) {\n      const primary = result.querySelector(\"a[href], button[data-href], [data-primary-url]\") || document.querySelector(\"#tool-result a[href]\");\n      stamp(\"pass\", \"Le formulaire natif a mis a jour la zone de resultat.\", resultHeadline(result), primary ? (primary.getAttribute(\"href\") || primary.getAttribute(\"data-primary-url\") || \"\") : \"\");\n      return;\n    }\n    if (attemptsLeft > 0) {\n      window.setTimeout(function () {\n        inspectResult(before, attemptsLeft - 1);\n      }, 250);\n      return;\n    }\n    stamp(\"fail\", \"La zone de resultat n'a pas renvoye de contenu exploitable.\", resultHeadline(result));\n  }\n\n  function runSmoke() {\n    const params = new URLSearchParams(window.location.search);\n    if (params.get(\"__qa\") !== \"functional\") return;\n    const form = findForm();\n    if (!form) {\n      stamp(\"fail\", \"Le formulaire principal est introuvable.\", \"\");\n      return;\n    }\n    const result = findResult();\n    const before = resultSignature(result);\n    form.querySelectorAll(\"input, select, textarea\").forEach(applySample);\n    const blocker = function (event) {\n      event.preventDefault();\n    };\n    form.addEventListener(\"submit\", blocker, { capture: true, once: true });\n    form.dispatchEvent(new Event(\"submit\", { bubbles: true, cancelable: true }));\n    inspectResult(before, 6);\n  }\n\n  if (document.readyState === \"loading\") {\n    document.addEventListener(\"DOMContentLoaded\", function () {\n      window.setTimeout(runSmoke, 60);\n    }, { once: true });\n  } else {\n    window.setTimeout(runSmoke, 60);\n  }\n})();\n</script>\n</body>\n</html>",
+    "generation_mode": "direct_html"
+  }
+}

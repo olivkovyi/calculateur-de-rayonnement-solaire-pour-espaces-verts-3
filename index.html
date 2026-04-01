@@ -3,229 +3,177 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculateur de Rayonnement Solaire pour Espaces Verts | Déterminez l&#x27;Ensoleillement Idéal</title>
+    <title>Calculateur de Rayonnement Solaire pour Espaces Verts | Évaluez l&#x27;ensoleillement de votre espace</title>
     <meta name="description" content="Évaluez l">
     <style>
-        :root {
-            --color-primary: #004d40; /* Dark Teal */
-            --color-secondary: #ffc107; /* Amber */
-            --color-background: #f0f4f8; /* Light Grey Blue */
-            --color-text-dark: #263238; /* Dark Grey */
-            --color-text-light: #eceff1; /* Lighter Grey Blue */
-            --color-accent: #37359e; /* Purple Blue */
-            --font-family-headline: 'Inter', sans-serif; /* Fallback */
-            --font-family-body: 'Roboto', sans-serif; /* Fallback */
-        }
-
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
-
         body {
-            font-family: var(--font-family-body);
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: var(--color-background);
-            color: var(--color-text-dark);
-            line-height: 1.6;
+            background-color: #f0f4f8;
+            color: #333;
             display: flex;
             flex-direction: column;
-            min-height: 100vh;
+            align-items: center;
         }
-
-        header {
-            background-color: var(--color-primary);
-            color: var(--color-text-light);
-            padding: 1.5rem 2rem;
-            text-align: center;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        header h1 {
-            font-family: var(--font-family-headline);
-            font-size: 2.5rem;
-            margin: 0;
-            line-height: 1.2;
-        }
-
-        header p {
-            font-size: 1.1rem;
-            margin-top: 0.5rem;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        main {
-            flex-grow: 1;
-            padding: 2rem;
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+            box-sizing: border-box;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 2rem auto;
+            gap: 20px;
         }
-
-        section {
-            background-color: #fff;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        .panel {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            padding: 25px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
-
-        h2 {
-            font-family: var(--font-family-headline);
-            color: var(--color-accent);
-            font-size: 1.8rem;
+        .panel:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
             margin-top: 0;
-            margin-bottom: 1.5rem;
+            font-weight: 600;
         }
-
-        .cta-section {
-            background-color: var(--color-primary);
-            color: var(--color-text-light);
+        h1 {
+            font-size: 2.2em;
             text-align: center;
-            padding: 3rem 2rem;
-            margin-top: 3rem;
+            margin-bottom: 25px;
+            grid-column: 1 / -1;
         }
-
-        .cta-section h2 {
-            color: var(--color-secondary);
-            font-size: 2.2rem;
+        h2 {
+            font-size: 1.6em;
+            margin-bottom: 15px;
         }
-
-        .cta-section p {
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin: 1rem auto 2rem auto;
+        h3 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
         }
-
-        .button {
-            display: inline-block;
-            background-color: var(--color-secondary);
-            color: var(--color-text-dark);
-            padding: 0.8rem 1.8rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
-
-        .button:hover {
-            background-color: #ffd54f; /* Lighter Amber */
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-        }
-
         label {
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-            color: var(--color-primary);
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #555;
+            font-size: 0.95em;
         }
-
-        input[type="text"],
-        input[type="number"],
-        select {
-            padding: 0.8rem;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 1rem;
-            background-color: var(--color-background);
+        input[type="number"], select, textarea {
+            width: calc(100% - 20px);
+            padding: 12px;
+            margin-bottom: 18px;
+            border: 1px solid #ccd6e0;
+            border-radius: 8px;
+            font-size: 1em;
+            box-sizing: border-box;
+            background-color: #fdfdfd;
             transition: border-color 0.3s ease;
         }
-
-        input[type="text"]:focus,
-        input[type="number"]:focus,
-        select:focus {
-            border-color: var(--color-accent);
+        input[type="number"]:focus, select:focus, textarea:focus {
+            border-color: #6a8d9f;
             outline: none;
+            box-shadow: 0 0 0 2px rgba(106, 141, 159, 0.2);
         }
-
-        #tool-submit {
-            background-color: var(--color-primary);
-            color: var(--color-text-light);
+        button {
+            background-color: #4a778c;
+            color: white;
+            padding: 14px 25px;
             border: none;
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            align-self: flex-start;
-        }
-
-        #tool-submit:hover {
-            background-color: #00695c; /* Slightly darker teal */
-        }
-
-        #tool-result {
-            margin-top: 1.5rem;
-            padding: 1rem;
-            border: 1px dashed var(--color-primary);
             border-radius: 8px;
-            background-color: var(--color-background);
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        button:hover {
+            background-color: #3b6070;
+            transform: translateY(-2px);
+        }
+        .secondary-btn {
+            background-color: #f0f4f8;
+            color: #4a778c;
+            border: 1px solid #4a778c;
+            margin-top: 10px;
+        }
+        .secondary-btn:hover {
+            background-color: #e2e8f0;
+            color: #3b6070;
+            border-color: #3b6070;
+        }
+        .result-section {
+            background-color: #eef7fc;
+            border: 1px solid #a3ccdf;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 20px;
             min-height: 100px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            font-size: 1.1rem;
-            font-weight: bold;
-            color: var(--color-primary);
+            color: #2c3e50;
         }
-
-        .result-detail {
-            margin-top: 1rem;
-            padding: 0.8rem;
-            background-color: #e0f2f7;
-            border-left: 5px solid var(--color-accent);
-            border-radius: 4px;
+        .result-section p {
+            margin-bottom: 10px;
+            font-size: 1.05em;
         }
-
-        footer {
-            background-color: var(--color-text-dark);
-            color: var(--color-text-light);
-            padding: 2rem;
-            text-align: center;
-            margin-top: 4rem;
-            font-size: 0.9rem;
+        .result-section strong {
+            color: #4a778c;
         }
-
-        .seo-text {
-            background-color: var(--color-text-light);
-            color: var(--color-text-dark);
-            padding: 2rem;
-            margin-top: 2rem;
-            border-top: 1px solid #cfd8dc;
-            font-size: 0.85rem;
-            line-height: 1.8;
+        .seo-section {
+            grid-column: 1 / -1;
+            padding: 30px;
+            background-color: #e0e9f0;
+            border-radius: 12px;
+            margin-top: 30px;
+            text-align: left;
+            box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.05);
         }
-        .seo-text h3 {
-            font-family: var(--font-family-headline);
-            color: var(--color-primary);
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
+        .seo-section h2 {
+            color: #3b6070;
+            margin-bottom: 20px;
+            font-size: 1.8em;
         }
-        .seo-text p {
-            margin-bottom: 1rem;
+        .seo-section p {
+            margin-bottom: 15px;
+            font-size: 0.95em;
+            line-height: 1.7;
+            color: #444;
         }
-        .seo-text ul {
-            list-style: disc inside;
-            padding-left: 1rem;
-            margin-bottom: 1rem;
+        .seo-section ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            padding-left: 0;
+            font-size: 0.95em;
+            color: #444;
         }
-        .seo-text a {
-            color: var(--color-accent);
-            text-decoration: none;
+        .seo-section li {
+            margin-bottom: 8px;
         }
-        .seo-text a:hover {
-            text-decoration: underline;
+        .note {
+            font-size: 0.85em;
+            color: #777;
+            margin-top: -10px;
+            margin-bottom: 15px;
+            display: block;
+        }
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            h1 {
+                font-size: 1.8em;
+            }
+            .panel {
+                padding: 20px;
+            }
         }
     </style>
     <meta name="robots" content="index, follow">
@@ -237,186 +185,218 @@
     <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Calculateur de Rayonnement Solaire pour Espaces Verts", "description": "Évaluez l", "url": "https://calculateur-de-rayonnement-solaire-pour-espaces-verts-3.up.railway.app", "applicationCategory": "UtilityApplication", "operatingSystem": "Web Browser"}</script>
 </head>
 <body data-site-slug="calculateur-de-rayonnement-solaire-pour-espaces-verts-3" data-runtime-mode="generic_calculator">
-    <header>
+    <div class="container">
         <h1>Calculateur de Rayonnement Solaire pour Espaces Verts</h1>
-        <p>Évaluez l'ensoleillement de votre jardin ou balcon pour choisir les plantes les plus adaptées. Un outil essentiel pour les jardiniers urbains et les paysagistes.</p>
-    </header>
 
-    <main>
-        <section>
-            <h2>Déterminez l'Ensoleillement Idéal</h2>
-            <p>Notre outil vous aide à comprendre le profil solaire de votre espace, qu'il s'agisse d'un jardin, d'un balcon ou d'une terrasse. Optimisez le choix des plantes pour garantir leur croissance et leur floraison, réduisant le besoin d'entretien et d'arrosage excessif.</p>
+        <div class="panel" style="grid-column: span 2;">
+            <h2>Évaluez l'ensoleillement de votre espace</h2>
+            <p>Cet outil vous aide à déterminer le profil d'ensoleillement de votre jardin ou balcon. Optimisez le choix des plantes pour garantir leur croissance et leur floraison, réduisant le besoin d'entretien et d'arrosage excessif.</p>
+        </div>
+
+        <div class="panel">
+            <h3>Paramètres de Localisation et d'Orientation</h3>
             <form id="tool-form">
-                <div class="form-group">
-                    <label for="localisation">Localisation (Ville ou Code Postal) :</label>
-                    <input type="text" id="localisation" name="localisation" placeholder="Ex: Paris, 75001" required>
-                </div>
-                <div class="form-group">
-                    <label for="orientation">Orientation principale de l'espace :</label>
-                    <select id="orientation" name="orientation" required>
-                        <option value="">-- Choisissez --</option>
-                        <option value="nord">Nord (Ombre)</option>
-                        <option value="nord-est">Nord-Est (Ombre/Mi-ombre matinale)</option>
-                        <option value="est">Est (Soleil du matin)</option>
-                        <option value="sud-est">Sud-Est (Soleil du matin à midi)</option>
-                        <option value="sud">Sud (Plein soleil)</option>
-                        <option value="sud-ouest">Sud-Ouest (Soleil de l'après-midi)</option>
-                        <option value="ouest">Ouest (Soleil de l'après-midi)</option>
-                        <option value="nord-ouest">Nord-Ouest (Soleil de fin d'après-midi)</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="obstructions">Obstructions à proximité (bâtiments, arbres, etc.) :</label>
-                    <select id="obstructions" name="obstructions" required>
-                        <option value="">-- Choisissez --</option>
-                        <option value="aucune">Aucune / Faible</option>
-                        <option value="partielle">Partielle (Ombre quelques heures)</option>
-                        <option value="importante">Importante (Ombre la majeure partie de la journée)</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="surface">Surface de l'espace (en m²) :</label>
-                    <input type="number" id="surface" name="surface" min="1" max="1000" placeholder="Ex: 15" required>
-                </div>
-                <button type="submit" id="tool-submit" data-affiliate-slot="solar-calc-submit">Calculer l'ensoleillement</button>
+                <label for="latitude">Latitude (Degrés N) :</label>
+                <input type="number" id="latitude" name="latitude" min="-90" max="90" value="48.85" required aria-label="Latitude géographique">
+                <span class="note">Ex: Paris est à environ 48.85</span>
+
+                <label for="orientation">Orientation principale de l'espace :</label>
+                <select id="orientation" name="orientation" required aria-label="Orientation principale de l'espace">
+                    <option value="sud">Sud (Plein soleil)</option>
+                    <option value="sud-est">Sud-Est (Soleil matinal)</option>
+                    <option value="sud-ouest">Sud-Ouest (Soleil d'après-midi)</option>
+                    <option value="est">Est (Soleil du matin)</option>
+                    <option value="ouest">Ouest (Soleil de l'après-midi)</option>
+                    <option value="nord">Nord (Ombre constante)</option>
+                </select>
+
+                <label for="inclinaison">Inclinaison de la surface (en degrés) :</label>
+                <input type="number" id="inclinaison" name="inclinaison" min="0" max="90" value="0" required aria-label="Inclinaison de la surface">
+                <span class="note">0° pour plat, 90° pour vertical (mur).</span>
             </form>
-        </section>
+        </div>
 
-        <section>
-            <h2>Votre Analyse Solaire Personnalisée</h2>
-            <div id="tool-result">
-                Les résultats de votre calcul apparaîtront ici.
+        <div class="panel">
+            <h3>Caractéristiques du Site</h3>
+            <label for="obstructions">Obstructions à proximité (bâtiments, arbres) :</label>
+            <select id="obstructions" name="obstructions" required aria-label="Niveau d'obstructions à proximité">
+                <option value="aucune">Aucune (Vue dégagée)</option>
+                <option value="faible">Faible (Quelques ombres légères)</option>
+                <option value="moderee">Modérée (Ombre une partie de la journée)</option>
+                <option value="elevee">Élevée (Beaucoup d'ombre)</option>
+            </select>
+
+            <label for="surface">Type de surface :</label>
+            <select id="surface" name="surface" required aria-label="Type de surface">
+                <option value="sol">Pleine terre / Jardin</option>
+                <option value="balcon">Balcon / Terrasse</option>
+                <option value="toit">Toit / Toiture végétalisée</option>
+            </select>
+
+            <label for="periode">Période d'évaluation :</label>
+            <select id="periode" name="periode" required aria-label="Période d'évaluation">
+                <option value="printemps-ete">Printemps-Été (Mars-Août)</option>
+                <option value="annee">Année complète</option>
+            </select>
+            <button type="submit" id="tool-submit">Calculer l'Ensoleillement</button>
+            <button class="secondary-btn" data-affiliate-slot="expert-consult" onclick="alert('Fonctionnalité en développement : Consultation d\'expert disponible prochainement !')">Besoin d'un avis d'expert ?</button>
+        </div>
+
+        <div class="panel" style="grid-column: 1 / -1;">
+            <h2>Résultat de l'Évaluation</h2>
+            <div id="tool-result" class="result-section">
+                <p id="result-detail">Vos résultats apparaîtront ici après le calcul.</p>
             </div>
-            <div id="recommandations" style="display: none;">
-                <h3>Recommandations de Plantes :</h3>
-                <div class="result-detail" id="plant-reco"></div>
-                <h3>Conseils d'Aménagement :</h3>
-                <div class="result-detail" id="layout-tips"></div>
-            </div>
-        </section>
-    </main>
+        </div>
 
-    <div class="cta-section">
-        <h2>Prêt à Transformer Votre Espace Vert ?</h2>
-        <p>Avec une compréhension claire de l'ensoleillement, vos projets de jardinage seront couronnés de succès. Moins d'erreurs, plus de floraisons !</p>
-        <a href="#" class="button" data-affiliate-slot="learn-more-cta">Découvrir nos guides</a>
+        <div class="seo-section">
+            <h2>Améliorez Votre Jardin Urbain et Balcon : Guides et Conseils</h2>
+            <p>Le choix des plantes est crucial pour la réussite de votre espace vert, surtout en milieu urbain. Comprendre l'ensoleillement de votre jardin, balcon ou terrasse est la première étape. Notre outil de calcul de rayonnement solaire vous offre une analyse précise pour transformer vos idées en floraison luxuriante.</p>
+            <h3>Pourquoi évaluer l'ensoleillement ?</h3>
+            <ul>
+                <li><strong>Optimisation des ressources :</strong> Réduisez votre consommation d'eau et d'engrais en choisissant des plantes adaptées aux conditions lumineuses de votre site.</li>
+                <li><strong>Croissance optimale :</strong> Les plantes reçoivent la lumière nécessaire à leur photosynthèse, garantissant une meilleure santé et une floraison abondante.</li>
+                <li><strong>Durabilité :</strong> Évitez les erreurs coûteuses et la déception des plantes qui périclitent faute de lumière adéquate. Contribuez à un écosystème urbain plus résilient.</li>
+                <li><strong>Gain de temps :</strong> Moins d'entretien pour des plantes qui sont naturellement à leur place.</li>
+            </ul>
+            <p>Que vous soyez un jardinier débutant ou expérimenté, notre calculateur solaire est un allié indispensable. Identifiez les zones d'ombre, de mi-ombre et de plein soleil sur votre propriété. Cet outil est parfait pour les jardiniers urbains, les paysagistes, et tous ceux qui souhaitent aménager un espace vert durable et épanoui.</p>
+            <p>Découvrez les secrets d'un jardin urbain réussi. Évaluez l'intensité lumineuse pour vos futures plantations. Pour des informations plus détaillées sur l'aménagement de votre balcon fleuri ou la création d'un potager sur votre terrasse, explorez nos guides.</p>
+        </div>
     </div>
-
-    <div class="seo-text">
-        <h3>Optimisez Votre Jardin avec le Calculateur d'Ensoleillement</h3>
-        <p>Que vous soyez un jardinier amateur ou un paysagiste expérimenté, l'ensoleillement est la clé du succès de vos plantations. Notre <strong>calculateur de rayonnement solaire</strong> est un outil indispensable pour évaluer précisément la quantité de lumière que reçoit votre espace vert. Fini les plantes qui dépérissent faute de soleil ou qui brûlent sous une exposition excessive !</p>
-
-        <p>En France, les variations climatiques et urbaines imposent une analyse fine. Utiliser notre outil vous permet de :</p>
-        <ul>
-            <li><strong>Choisir les bonnes espèces</strong> : Découvrez quelles plantes s'épanouiront le mieux selon l'orientation de votre balcon (nord, sud, est, ouest) ou les ombres portées par les bâtiments environnants dans votre jardin parisien, marseillais ou lyonnais.</li>
-            <li><strong>Réduire la consommation d'eau</strong> : Des plantes adaptées à leur environnement nécessitent moins d'arrosage, un geste écologique et économique.</li>
-            <li><strong>Valoriser votre espace</strong> : Un jardin ou un balcon fleuri et luxuriant augmente l'attrait et la valeur de votre propriété.</li>
-            <li><strong>Gagner du temps et de l'énergie</strong> : Évitez les essais infructueux et les remplacements coûteux de végétaux.</li>
-        </ul>
-
-        <p>Notre simulateur prend en compte des paramètres cruciaux comme la <strong>localisation géographique</strong> (ville ou code postal), l'<strong>orientation cardinale</strong> de votre espace et la présence d'<strong>obstacles naturels ou architecturaux</strong>. Obtenez un diagnostic clair et des recommandations personnalisées pour transformer votre balcon urbain en oasis de verdure, ou votre jardin de banlieue en véritable havre de paix.</p>
-
-        <p>N'attendez plus pour donner à vos plantes les meilleures chances de prospérité. Calculez dès maintenant l'ensoleillement de votre espace et devenez un expert du jardinage intelligent !</p>
-    </div>
-
-    <footer>
-        <p>&copy; 2023 Calculateur de Rayonnement Solaire. Tous droits réservés.</p>
-    </footer>
 
     <script>
         document.getElementById('tool-form').addEventListener('submit', function(event) {
             event.preventDefault();
+            calculateInsolation();
+        });
 
-            const localisation = document.getElementById('localisation').value;
+        document.getElementById('tool-submit').addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent form submission if button is clicked
+            calculateInsolation();
+        });
+
+        function calculateInsolation() {
+            const latitude = parseFloat(document.getElementById('latitude').value);
             const orientation = document.getElementById('orientation').value;
+            const inclinaison = parseFloat(document.getElementById('inclinaison').value);
             const obstructions = document.getElementById('obstructions').value;
-            const surface = parseInt(document.getElementById('surface').value);
+            const surface = document.getElementById('surface').value;
+            const periode = document.getElementById('periode').value;
 
-            let ensoleillementNiveau = '';
-            let heuresSoleil = 0;
-            let recommandationsPlantes = '';
-            let conseilsAmenagement = '';
+            let ensoleillementScore = 0;
+            let explication = [];
 
-            // Simple logic for solar radiation calculation and recommendations
+            // Base score based on orientation
             switch (orientation) {
-                case 'nord':
-                    heuresSoleil = 1;
-                    ensoleillementNiveau = 'Ombre profonde à mi-ombre';
-                    recommandationsPlantes = 'Fougères, hostas, impatiens, rododendrons, camélias.';
-                    conseilsAmenagement = 'Privilégiez les plantes aimant l\'ombre et l\'humidité. Créez des zones de repos ombragées.';
-                    break;
-                case 'nord-est':
-                    heuresSoleil = 3;
-                    ensoleillementNiveau = 'Mi-ombre matinale';
-                    recommandationsPlantes = 'Ancolies, astilbes, pervenches, primevères, hortensias.';
-                    conseilsAmenagement = 'Profitez du soleil doux du matin. Idéal pour des petits déjeuners à l\'abri du soleil de l\'après-midi.';
-                    break;
-                case 'est':
-                    heuresSoleil = 4;
-                    ensoleillementNiveau = 'Soleil du matin';
-                    recommandationsPlantes = 'Roses (certaines variétés), géraniums vivaces, campanules, clématites.';
-                    conseilsAmenagement = 'Excellente orientation pour un jardin florissant, le soleil du matin est doux. Pensez aux plantes grimpantes.';
+                case 'sud':
+                    ensoleillementScore += 100;
+                    explication.push("L'orientation plein Sud maximise l'exposition solaire.");
                     break;
                 case 'sud-est':
-                    heuresSoleil = 5;
-                    ensoleillementNiveau = 'Soleil du matin à midi';
-                    recommandationsPlantes = 'Lavandes, cistes, œillets, delphiniums, pivoines.';
-                    conseilsAmenagement = 'Cette orientation offre un bon compromis. Associez plantes méditerranéennes et espèces plus classiques.';
-                    break;
-                case 'sud':
-                    heuresSoleil = 8;
-                    ensoleillementNiveau = 'Plein soleil';
-                    recommandationsPlantes = 'Olivier, laurier rose, figuier, cactus, plantes grasses, romarin, thym.';
-                    conseilsAmenagement = 'Protégez les plantes les plus fragiles de la chaleur intense. Pensez à l\'irrigation et aux voiles d\'ombrage légers.';
+                    ensoleillementScore += 80;
+                    explication.push("L'orientation Sud-Est bénéficie du soleil matinal, moins intense.");
                     break;
                 case 'sud-ouest':
-                    heuresSoleil = 6;
-                    ensoleillementNiveau = 'Soleil de l\'après-midi';
-                    recommandationsPlantes = 'Buddleias, gaillardes, rudbeckias, sauges, graminées ornementales.';
-                    conseilsAmenagement = 'Le soleil de l\'après-midi peut être intense, choisissez des plantes résistantes à la sécheresse ou prévoyez de l\'ombre.';
+                    ensoleillementScore += 90;
+                    explication.push("L'orientation Sud-Ouest reçoit le soleil d'après-midi, plus chaud.");
+                    break;
+                case 'est':
+                    ensoleillementScore += 60;
+                    explication.push("L'orientation Est offre un soleil doux en matinée.");
                     break;
                 case 'ouest':
-                    heuresSoleil = 5;
-                    ensoleillementNiveau = 'Soleil de l\'après-midi';
-                    recommandationsPlantes = 'Hémérocalles, phlox, asters, coreopsis, chèvrefeuille.';
-                    conseilsAmenagement = 'Idéal pour profiter du soleil couchant. Mettez en place un système d\'arrosage efficace pour gérer la chaleur de fin de journée.';
+                    ensoleillementScore += 70;
+                    explication.push("L'orientation Ouest procure un soleil intense en après-midi.");
                     break;
-                case 'nord-ouest':
-                    heuresSoleil = 2;
-                    ensoleillementNiveau = 'Soleil de fin d\'après-midi / Mi-ombre';
-                    recommandationsPlantes = 'Hortensias, fuchsias, impatiens, primevères japonaises.';
-                    conseilsAmenagement = 'Parfait pour un coin frais l\'après-midi. Les plantes apprécieront le soleil doux de la fin de journée.';
+                case 'nord':
+                    ensoleillementScore += 20;
+                    explication.push("L'orientation Nord est majoritairement ombragée.");
                     break;
             }
 
-            // Adjust based on obstructions
-            if (obstructions === 'partielle') {
-                heuresSoleil = Math.max(1, heuresSoleil - 2);
-                ensoleillementNiveau += ' (avec ombre partielle)';
-            } else if (obstructions === 'importante') {
-                heuresSoleil = Math.max(0, heuresSoleil - 4);
-                ensoleillementNiveau += ' (avec ombre importante)';
-                if (heuresSoleil < 1) {
-                    ensoleillementNiveau = 'Ombre très profonde';
-                    recommandationsPlantes = 'Plantes d\'intérieur ombrophiles, quelques fougères très résistantes à l\'ombre.';
-                    conseilsAmenagement = 'Pensez aux miroirs pour refléter la lumière ou aux plantes artificielles de qualité.';
-                }
+            // Adjust for latitude (simplistic, assuming higher latitude = less intense sun overall)
+            // For France, latitude 40-50, we'll give a slight boost if closer to south (e.g., Nice)
+            if (latitude < 45 && orientation.includes('sud')) {
+                ensoleillementScore += 5; // Slight boost for southern France
+                explication.push("La latitude plus basse (Sud de la France) augmente légèrement l'intensité solaire.");
+            } else if (latitude > 47 && orientation.includes('nord')) {
+                ensoleillementScore -= 5; // Slight reduction for northern France with north exposure
+                explication.push("La latitude plus élevée (Nord de la France) réduit légèrement l'intensité solaire en exposition Nord.");
             }
 
-            const resultDiv = document.getElementById('tool-result');
-            const recoDiv = document.getElementById('recommandations');
-            const plantRecoDiv = document.getElementById('plant-reco');
-            const layoutTipsDiv = document.getElementById('layout-tips');
+            // Adjust for inclination (vertical surfaces get less direct sun, unless specifically facing sun)
+            if (inclinaison > 45) { // Assuming a wall or very sloped surface
+                ensoleillementScore *= 0.8;
+                explication.push(`L'inclinaison de ${inclinaison}° réduit l'exposition directe.`);
+            } else if (inclinaison > 15) {
+                ensoleillementScore *= 0.9;
+                explication.push(`L'inclinaison légère de ${inclinaison}° a un impact mineur.`);
+            }
 
-            resultDiv.innerHTML = `
-                <p>Pour votre espace à <strong>${localisation}</strong>, avec une orientation <strong>${orientation}</strong> et des obstructions <strong>${obstructions}</strong>, nous estimons :</p>
-                <p style="font-size: 1.5rem; color: var(--color-primary);"><strong>${heuresSoleil} heures</strong> de soleil direct par jour en moyenne.</p>
-                <p>Ce qui correspond à un niveau d'ensoleillement : <strong>${ensoleillementNiveau}</strong>.</p>
+            // Adjust for obstructions
+            switch (obstructions) {
+                case 'faible':
+                    ensoleillementScore *= 0.95;
+                    explication.push("Des obstructions faibles causent une légère réduction de l'ensoleillement.");
+                    break;
+                case 'moderee':
+                    ensoleillementScore *= 0.7;
+                    explication.push("Des obstructions modérées créent une ombre significative une partie de la journée.");
+                    break;
+                case 'elevee':
+                    ensoleillementScore *= 0.3;
+                    explication.push("Des obstructions élevées résultent en un espace très ombragé.");
+                    break;
+            }
+
+            // Adjust for surface type (reflectivity, heat retention - very simplified)
+            if (surface === 'balcon') {
+                ensoleillementScore += 5; // Balcon/terrasse can get more reflected heat
+                explication.push("Un balcon ou une terrasse peut bénéficier d'une chaleur réfléchie supplémentaire.");
+            } else if (surface === 'toit') {
+                ensoleillementScore += 10; // Toiture végétalisée often very exposed
+                explication.push("Une toiture végétalisée bénéficie généralement d'une exposition maximale.");
+            }
+
+            // Adjust for period (simplified seasonal variation)
+            if (periode === 'annee') {
+                ensoleillementScore *= 0.9; // Average over the year, less peak summer
+                explication.push("L'évaluation sur l'année complète intègre les variations saisonnières.");
+            }
+
+            // Cap score and categorize
+            ensoleillementScore = Math.max(0, Math.min(100, ensoleillementScore));
+
+            let categorie = '';
+            let recommandations = '';
+
+            if (ensoleillementScore >= 85) {
+                categorie = 'Plein Soleil (6h+ par jour)';
+                recommandations = 'Idéal pour la plupart des légumes, herbes aromatiques, roses, lavande, géraniums. Les plantes ont besoin d\'un arrosage régulier et d\'une bonne protection contre la chaleur intense.';
+            } else if (ensoleillementScore >= 60) {
+                categorie = 'Mi-Ombre à Soleil (3-6h par jour)';
+                recommandations = 'Convient pour de nombreuses fleurs annuelles et vivaces (impatiens, fuchsias, hortensias), certains légumes feuilles et fruits à l\'abri du soleil le plus ardent de l\'après-midi.';
+            } else if (ensoleillementScore >= 35) {
+                categorie = 'Ombre Légère (1-3h par jour ou lumière filtrée)';
+                recommandations = 'Parfait pour les plantes d\'ombre comme les fougères, hostas, lierres, primevères. Moins d\'arrosage nécessaire, protégez du soleil direct et intense.';
+            } else {
+                categorie = 'Ombre Profonde (Moins de 1h de soleil direct)';
+                recommandations = 'Pour les plantes très tolérantes à l\'ombre : pervenches, mousse, certaines fougères. Le sol reste humide plus longtemps, attention à ne pas sur-arroser.';
+            }
+
+            let resultHtml = `
+                <p><strong>Profil d'ensoleillement estimé :</strong> <strong style="color: #6a8d9f;">${categorie}</strong></p>
+                <p><strong>Score d'ensoleillement (sur 100) :</strong> <strong style="color: #6a8d9f;">${ensoleillementScore.toFixed(0)}</strong></p>
+                <p><strong>Recommandations générales :</strong> ${recommandations}</p>
+                <p><strong>Détails du calcul :</strong></p>
+                <ul>
+                    ${explication.map(item => `<li>${item}</li>`).join('')}
+                    <li>L'estimation est basée sur des données moyennes et peut varier avec les saisons et la météo locale.</li>
+                </ul>
             `;
-            plantRecoDiv.textContent = recommandationsPlantes;
-            layoutTipsDiv.textContent = conseilsAmenagement;
-            recoDiv.style.display = 'block';
-        });
+
+            document.getElementById('tool-result').innerHTML = resultHtml;
+        }
     </script>
 <div id="qa-smoke-result" hidden></div>
 <script id="farmbuilder-affiliate-helper">

@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculateur de Rayonnement Solaire pour Espaces Verts | Déterminez l&#x27;Ensoleillement Idéal</title>
+    <meta name="description" content="Évaluez l">
+    <style>
+        :root {
+            --color-primary: #004d40; /* Dark Teal */
+            --color-secondary: #ffc107; /* Amber */
+            --color-background: #f0f4f8; /* Light Grey Blue */
+            --color-text-dark: #263238; /* Dark Grey */
+            --color-text-light: #eceff1; /* Lighter Grey Blue */
+            --color-accent: #37359e; /* Purple Blue */
+            --font-family-headline: 'Inter', sans-serif; /* Fallback */
+            --font-family-body: 'Roboto', sans-serif; /* Fallback */
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
+
+        body {
+            font-family: var(--font-family-body);
+            margin: 0;
+            padding: 0;
+            background-color: var(--color-background);
+            color: var(--color-text-dark);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: var(--color-primary);
+            color: var(--color-text-light);
+            padding: 1.5rem 2rem;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-family: var(--font-family-headline);
+            font-size: 2.5rem;
+            margin: 0;
+            line-height: 1.2;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            margin-top: 0.5rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        main {
+            flex-grow: 1;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 2rem auto;
+        }
+
+        section {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            font-family: var(--font-family-headline);
+            color: var(--color-accent);
+            font-size: 1.8rem;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-section {
+            background-color: var(--color-primary);
+            color: var(--color-text-light);
+            text-align: center;
+            padding: 3rem 2rem;
+            margin-top: 3rem;
+        }
+
+        .cta-section h2 {
+            color: var(--color-secondary);
+            font-size: 2.2rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 1rem auto 2rem auto;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: var(--color-secondary);
+            color: var(--color-text-dark);
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #ffd54f; /* Lighter Amber */
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: var(--color-primary);
+        }
+
+        input[type="text"],
+        input[type="number"],
+        select {
+            padding: 0.8rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+            background-color: var(--color-background);
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="number"]:focus,
+        select:focus {
+            border-color: var(--color-accent);
+            outline: none;
+        }
+
+        #tool-submit {
+            background-color: var(--color-primary);
+            color: var(--color-text-light);
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            align-self: flex-start;
+        }
+
+        #tool-submit:hover {
+            background-color: #00695c; /* Slightly darker teal */
+        }
+
+        #tool-result {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            border: 1px dashed var(--color-primary);
+            border-radius: 8px;
+            background-color: var(--color-background);
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: var(--color-primary);
+        }
+
+        .result-detail {
+            margin-top: 1rem;
+            padding: 0.8rem;
+            background-color: #e0f2f7;
+            border-left: 5px solid var(--color-accent);
+            border-radius: 4px;
+        }
+
+        footer {
+            background-color: var(--color-text-dark);
+            color: var(--color-text-light);
+            padding: 2rem;
+            text-align: center;
+            margin-top: 4rem;
+            font-size: 0.9rem;
+        }
+
+        .seo-text {
+            background-color: var(--color-text-light);
+            color: var(--color-text-dark);
+            padding: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid #cfd8dc;
+            font-size: 0.85rem;
+            line-height: 1.8;
+        }
+        .seo-text h3 {
+            font-family: var(--font-family-headline);
+            color: var(--color-primary);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .seo-text p {
+            margin-bottom: 1rem;
+        }
+        .seo-text ul {
+            list-style: disc inside;
+            padding-left: 1rem;
+            margin-bottom: 1rem;
+        }
+        .seo-text a {
+            color: var(--color-accent);
+            text-decoration: none;
+        }
+        .seo-text a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://calculateur-de-rayonnement-solaire-pour-espaces-verts-3.up.railway.app">
+    <meta property="og:title" content="Calculateur de Rayonnement Solaire pour Espaces Verts">
+    <meta property="og:description" content="Évaluez l">
+    <meta property="og:url" content="https://calculateur-de-rayonnement-solaire-pour-espaces-verts-3.up.railway.app">
+    <meta property="og:type" content="website">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Calculateur de Rayonnement Solaire pour Espaces Verts", "description": "Évaluez l", "url": "https://calculateur-de-rayonnement-solaire-pour-espaces-verts-3.up.railway.app", "applicationCategory": "UtilityApplication", "operatingSystem": "Web Browser"}</script>
+</head>
+<body data-site-slug="calculateur-de-rayonnement-solaire-pour-espaces-verts-3" data-runtime-mode="generic_calculator">
+    <header>
+        <h1>Calculateur de Rayonnement Solaire pour Espaces Verts</h1>
+        <p>Évaluez l'ensoleillement de votre jardin ou balcon pour choisir les plantes les plus adaptées. Un outil essentiel pour les jardiniers urbains et les paysagistes.</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>Déterminez l'Ensoleillement Idéal</h2>
+            <p>Notre outil vous aide à comprendre le profil solaire de votre espace, qu'il s'agisse d'un jardin, d'un balcon ou d'une terrasse. Optimisez le choix des plantes pour garantir leur croissance et leur floraison, réduisant le besoin d'entretien et d'arrosage excessif.</p>
+            <form id="tool-form">
+                <div class="form-group">
+                    <label for="localisation">Localisation (Ville ou Code Postal) :</label>
+                    <input type="text" id="localisation" name="localisation" placeholder="Ex: Paris, 75001" required>
+                </div>
+                <div class="form-group">
+                    <label for="orientation">Orientation principale de l'espace :</label>
+                    <select id="orientation" name="orientation" required>
+                        <option value="">-- Choisissez --</option>
+                        <option value="nord">Nord (Ombre)</option>
+                        <option value="nord-est">Nord-Est (Ombre/Mi-ombre matinale)</option>
+                        <option value="est">Est (Soleil du matin)</option>
+                        <option value="sud-est">Sud-Est (Soleil du matin à midi)</option>
+                        <option value="sud">Sud (Plein soleil)</option>
+                        <option value="sud-ouest">Sud-Ouest (Soleil de l'après-midi)</option>
+                        <option value="ouest">Ouest (Soleil de l'après-midi)</option>
+                        <option value="nord-ouest">Nord-Ouest (Soleil de fin d'après-midi)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="obstructions">Obstructions à proximité (bâtiments, arbres, etc.) :</label>
+                    <select id="obstructions" name="obstructions" required>
+                        <option value="">-- Choisissez --</option>
+                        <option value="aucune">Aucune / Faible</option>
+                        <option value="partielle">Partielle (Ombre quelques heures)</option>
+                        <option value="importante">Importante (Ombre la majeure partie de la journée)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="surface">Surface de l'espace (en m²) :</label>
+                    <input type="number" id="surface" name="surface" min="1" max="1000" placeholder="Ex: 15" required>
+                </div>
+                <button type="submit" id="tool-submit" data-affiliate-slot="solar-calc-submit">Calculer l'ensoleillement</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Votre Analyse Solaire Personnalisée</h2>
+            <div id="tool-result">
+                Les résultats de votre calcul apparaîtront ici.
+            </div>
+            <div id="recommandations" style="display: none;">
+                <h3>Recommandations de Plantes :</h3>
+                <div class="result-detail" id="plant-reco"></div>
+                <h3>Conseils d'Aménagement :</h3>
+                <div class="result-detail" id="layout-tips"></div>
+            </div>
+        </section>
+    </main>
+
+    <div class="cta-section">
+        <h2>Prêt à Transformer Votre Espace Vert ?</h2>
+        <p>Avec une compréhension claire de l'ensoleillement, vos projets de jardinage seront couronnés de succès. Moins d'erreurs, plus de floraisons !</p>
+        <a href="#" class="button" data-affiliate-slot="learn-more-cta">Découvrir nos guides</a>
+    </div>
+
+    <div class="seo-text">
+        <h3>Optimisez Votre Jardin avec le Calculateur d'Ensoleillement</h3>
+        <p>Que vous soyez un jardinier amateur ou un paysagiste expérimenté, l'ensoleillement est la clé du succès de vos plantations. Notre <strong>calculateur de rayonnement solaire</strong> est un outil indispensable pour évaluer précisément la quantité de lumière que reçoit votre espace vert. Fini les plantes qui dépérissent faute de soleil ou qui brûlent sous une exposition excessive !</p>
+
+        <p>En France, les variations climatiques et urbaines imposent une analyse fine. Utiliser notre outil vous permet de :</p>
+        <ul>
+            <li><strong>Choisir les bonnes espèces</strong> : Découvrez quelles plantes s'épanouiront le mieux selon l'orientation de votre balcon (nord, sud, est, ouest) ou les ombres portées par les bâtiments environnants dans votre jardin parisien, marseillais ou lyonnais.</li>
+            <li><strong>Réduire la consommation d'eau</strong> : Des plantes adaptées à leur environnement nécessitent moins d'arrosage, un geste écologique et économique.</li>
+            <li><strong>Valoriser votre espace</strong> : Un jardin ou un balcon fleuri et luxuriant augmente l'attrait et la valeur de votre propriété.</li>
+            <li><strong>Gagner du temps et de l'énergie</strong> : Évitez les essais infructueux et les remplacements coûteux de végétaux.</li>
+        </ul>
+
+        <p>Notre simulateur prend en compte des paramètres cruciaux comme la <strong>localisation géographique</strong> (ville ou code postal), l'<strong>orientation cardinale</strong> de votre espace et la présence d'<strong>obstacles naturels ou architecturaux</strong>. Obtenez un diagnostic clair et des recommandations personnalisées pour transformer votre balcon urbain en oasis de verdure, ou votre jardin de banlieue en véritable havre de paix.</p>
+
+        <p>N'attendez plus pour donner à vos plantes les meilleures chances de prospérité. Calculez dès maintenant l'ensoleillement de votre espace et devenez un expert du jardinage intelligent !</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Calculateur de Rayonnement Solaire. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        document.getElementById('tool-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const localisation = document.getElementById('localisation').value;
+            const orientation = document.getElementById('orientation').value;
+            const obstructions = document.getElementById('obstructions').value;
+            const surface = parseInt(document.getElementById('surface').value);
+
+            let ensoleillementNiveau = '';
+            let heuresSoleil = 0;
+            let recommandationsPlantes = '';
+            let conseilsAmenagement = '';
+
+            // Simple logic for solar radiation calculation and recommendations
+            switch (orientation) {
+                case 'nord':
+                    heuresSoleil = 1;
+                    ensoleillementNiveau = 'Ombre profonde à mi-ombre';
+                    recommandationsPlantes = 'Fougères, hostas, impatiens, rododendrons, camélias.';
+                    conseilsAmenagement = 'Privilégiez les plantes aimant l\'ombre et l\'humidité. Créez des zones de repos ombragées.';
+                    break;
+                case 'nord-est':
+                    heuresSoleil = 3;
+                    ensoleillementNiveau = 'Mi-ombre matinale';
+                    recommandationsPlantes = 'Ancolies, astilbes, pervenches, primevères, hortensias.';
+                    conseilsAmenagement = 'Profitez du soleil doux du matin. Idéal pour des petits déjeuners à l\'abri du soleil de l\'après-midi.';
+                    break;
+                case 'est':
+                    heuresSoleil = 4;
+                    ensoleillementNiveau = 'Soleil du matin';
+                    recommandationsPlantes = 'Roses (certaines variétés), géraniums vivaces, campanules, clématites.';
+                    conseilsAmenagement = 'Excellente orientation pour un jardin florissant, le soleil du matin est doux. Pensez aux plantes grimpantes.';
+                    break;
+                case 'sud-est':
+                    heuresSoleil = 5;
+                    ensoleillementNiveau = 'Soleil du matin à midi';
+                    recommandationsPlantes = 'Lavandes, cistes, œillets, delphiniums, pivoines.';
+                    conseilsAmenagement = 'Cette orientation offre un bon compromis. Associez plantes méditerranéennes et espèces plus classiques.';
+                    break;
+                case 'sud':
+                    heuresSoleil = 8;
+                    ensoleillementNiveau = 'Plein soleil';
+                    recommandationsPlantes = 'Olivier, laurier rose, figuier, cactus, plantes grasses, romarin, thym.';
+                    conseilsAmenagement = 'Protégez les plantes les plus fragiles de la chaleur intense. Pensez à l\'irrigation et aux voiles d\'ombrage légers.';
+                    break;
+                case 'sud-ouest':
+                    heuresSoleil = 6;
+                    ensoleillementNiveau = 'Soleil de l\'après-midi';
+                    recommandationsPlantes = 'Buddleias, gaillardes, rudbeckias, sauges, graminées ornementales.';
+                    conseilsAmenagement = 'Le soleil de l\'après-midi peut être intense, choisissez des plantes résistantes à la sécheresse ou prévoyez de l\'ombre.';
+                    break;
+                case 'ouest':
+                    heuresSoleil = 5;
+                    ensoleillementNiveau = 'Soleil de l\'après-midi';
+                    recommandationsPlantes = 'Hémérocalles, phlox, asters, coreopsis, chèvrefeuille.';
+                    conseilsAmenagement = 'Idéal pour profiter du soleil couchant. Mettez en place un système d\'arrosage efficace pour gérer la chaleur de fin de journée.';
+                    break;
+                case 'nord-ouest':
+                    heuresSoleil = 2;
+                    ensoleillementNiveau = 'Soleil de fin d\'après-midi / Mi-ombre';
+                    recommandationsPlantes = 'Hortensias, fuchsias, impatiens, primevères japonaises.';
+                    conseilsAmenagement = 'Parfait pour un coin frais l\'après-midi. Les plantes apprécieront le soleil doux de la fin de journée.';
+                    break;
+            }
+
+            // Adjust based on obstructions
+            if (obstructions === 'partielle') {
+                heuresSoleil = Math.max(1, heuresSoleil - 2);
+                ensoleillementNiveau += ' (avec ombre partielle)';
+            } else if (obstructions === 'importante') {
+                heuresSoleil = Math.max(0, heuresSoleil - 4);
+                ensoleillementNiveau += ' (avec ombre importante)';
+                if (heuresSoleil < 1) {
+                    ensoleillementNiveau = 'Ombre très profonde';
+                    recommandationsPlantes = 'Plantes d\'intérieur ombrophiles, quelques fougères très résistantes à l\'ombre.';
+                    conseilsAmenagement = 'Pensez aux miroirs pour refléter la lumière ou aux plantes artificielles de qualité.';
+                }
+            }
+
+            const resultDiv = document.getElementById('tool-result');
+            const recoDiv = document.getElementById('recommandations');
+            const plantRecoDiv = document.getElementById('plant-reco');
+            const layoutTipsDiv = document.getElementById('layout-tips');
+
+            resultDiv.innerHTML = `
+                <p>Pour votre espace à <strong>${localisation}</strong>, avec une orientation <strong>${orientation}</strong> et des obstructions <strong>${obstructions}</strong>, nous estimons :</p>
+                <p style="font-size: 1.5rem; color: var(--color-primary);"><strong>${heuresSoleil} heures</strong> de soleil direct par jour en moyenne.</p>
+                <p>Ce qui correspond à un niveau d'ensoleillement : <strong>${ensoleillementNiveau}</strong>.</p>
+            `;
+            plantRecoDiv.textContent = recommandationsPlantes;
+            layoutTipsDiv.textContent = conseilsAmenagement;
+            recoDiv.style.display = 'block';
+        });
+    </script>
+<div id="qa-smoke-result" hidden></div>
+<script id="farmbuilder-affiliate-helper">
+(function () {
+  window.__UTILITY_AFFILIATE_MAP = window.__UTILITY_AFFILIATE_MAP || {};
+  document.addEventListener("click", function (event) {
+    const target = event.target.closest("[data-affiliate-slot]");
+    if (!target) return;
+    const slot = target.getAttribute("data-affiliate-slot");
+    const href = window.__UTILITY_AFFILIATE_MAP[slot];
+    if (!href) return;
+    if (target.tagName && target.tagName.toLowerCase() === "a") {
+      target.setAttribute("href", href);
+      target.setAttribute("rel", "nofollow sponsored noopener noreferrer");
+      return;
+    }
+    event.preventDefault();
+    window.open(href, "_blank", "noopener");
+  }, true);
+})();
+</script>
+<script id="farmbuilder-functional-qa">
+(function () {
+  function marker() {
+    let node = document.getElementById("qa-smoke-result");
+    if (node) return node;
+    node = document.createElement("div");
+    node.id = "qa-smoke-result";
+    node.hidden = true;
+    document.body.appendChild(node);
+    return node;
+  }
+
+  function normalize(text) {
+    return String(text || "").replace(/\s+/g, " ").trim();
+  }
+
+  function findForm() {
+    return document.getElementById("tool-form") || document.querySelector("form");
+  }
+
+  function findResult() {
+    return (
+      document.getElementById("tool-result") ||
+      document.querySelector("[data-result]") ||
+      document.querySelector(".tool-result, .result-card, .result, .results, .output, .preview, .diagnostic, .analysis")
+    );
+  }
+
+  function resultSignature(node) {
+    if (!node) return "";
+    const text = normalize(node.textContent);
+    const html = normalize(node.innerHTML).slice(0, 600);
+    return `${text}||${html}`;
+  }
+
+  function resultHeadline(node) {
+    if (!node) return "";
+    const heading = node.querySelector("h1, h2, h3, strong, b");
+    return normalize(heading ? heading.textContent : "");
+  }
+
+  function sampleText(field) {
+    const key = `${field.id || ""} ${field.name || ""} ${field.placeholder || ""}`.toLowerCase();
+    if (/email/.test(key)) return "bonjour@example.com";
+    if (/url|site|website|lien/.test(key)) return "https://example.com/offre-solaire";
+    if (/phone|tel|mobile/.test(key)) return "0612345678";
+    if (/ville|city|localisation|location|region|departement|postal/.test(key)) return "Paris";
+    if (/orientation/.test(key)) return "sud";
+    if (/keyword|theme|topic|sujet|subject/.test(key)) return "energie solaire domestique";
+    if (/titre|title/.test(key)) return "Simulateur solaire maison";
+    if (/nom|name|project/.test(key)) return "Projet Horizon";
+    if (/description|notes|content|message/.test(key)) return "Maison individuelle exposee sud avec toiture exploitable.";
+    return field.placeholder || "France";
+  }
+
+  function sampleNumber(field) {
+    const key = `${field.id || ""} ${field.name || ""}`.toLowerCase();
+    if (/inclinaison|angle|slope/.test(key)) return "30";
+    if (/surface|size|m2|sqm/.test(key)) return "28";
+    if (/annee|year/.test(key)) return "2024";
+    if (/prix|price|budget|cost|amount|montant/.test(key)) return "12000";
+    const min = Number(field.min || "");
+    const max = Number(field.max || "");
+    if (Number.isFinite(min) && Number.isFinite(max) && max >= min) {
+      return String(Math.min(max, Math.max(min, min + Math.round((max - min) * 0.35))));
+    }
+    if (Number.isFinite(min)) return String(Math.max(min, 12));
+    if (Number.isFinite(max)) return String(Math.min(max, 12));
+    return field.value || "12";
+  }
+
+  function applySample(field) {
+    const tag = (field.tagName || "").toLowerCase();
+    const type = (field.type || "").toLowerCase();
+    if (field.disabled) return;
+    if (tag === "select") {
+      const option = Array.from(field.options || []).find((item) => item.value && !item.disabled) || field.options[0];
+      if (option) field.value = option.value;
+      return;
+    }
+    if (type === "checkbox") {
+      field.checked = true;
+      return;
+    }
+    if (type === "radio") {
+      field.checked = true;
+      return;
+    }
+    if (type === "date") {
+      field.value = "2026-03-01";
+      return;
+    }
+    if (type === "email") {
+      field.value = "bonjour@example.com";
+      return;
+    }
+    if (type === "url") {
+      field.value = "https://example.com/offre-solaire";
+      return;
+    }
+    if (type === "tel") {
+      field.value = "0612345678";
+      return;
+    }
+    if (type === "color") {
+      field.value = "#2f855a";
+      return;
+    }
+    if (type === "number" || type === "range") {
+      field.value = sampleNumber(field);
+      return;
+    }
+    field.value = sampleText(field);
+  }
+
+  function stamp(status, detail, headline, primary) {
+    const node = marker();
+    node.dataset.status = status;
+    node.dataset.mode = "native-form";
+    node.dataset.detail = detail || "";
+    node.dataset.headline = headline || "";
+    node.dataset.primary = primary || "";
+    node.dataset.viewport = window.innerWidth <= 640 ? "mobile" : "desktop";
+  }
+
+  function inspectResult(before, attemptsLeft) {
+    const result = findResult();
+    if (!result) {
+      stamp("fail", "La zone de resultat est introuvable.", "");
+      return;
+    }
+    const after = resultSignature(result);
+    const text = normalize(result.textContent);
+    if (after && after !== before && text.length >= 24) {
+      const primary = result.querySelector("a[href], button[data-href], [data-primary-url]") || document.querySelector("#tool-result a[href]");
+      stamp("pass", "Le formulaire natif a mis a jour la zone de resultat.", resultHeadline(result), primary ? (primary.getAttribute("href") || primary.getAttribute("data-primary-url") || "") : "");
+      return;
+    }
+    if (attemptsLeft > 0) {
+      window.setTimeout(function () {
+        inspectResult(before, attemptsLeft - 1);
+      }, 250);
+      return;
+    }
+    stamp("fail", "La zone de resultat n'a pas renvoye de contenu exploitable.", resultHeadline(result));
+  }
+
+  function runSmoke() {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("__qa") !== "functional") return;
+    const form = findForm();
+    if (!form) {
+      stamp("fail", "Le formulaire principal est introuvable.", "");
+      return;
+    }
+    const result = findResult();
+    const before = resultSignature(result);
+    form.querySelectorAll("input, select, textarea").forEach(applySample);
+    const blocker = function (event) {
+      event.preventDefault();
+    };
+    form.addEventListener("submit", blocker, { capture: true, once: true });
+    form.dispatchEvent(new Event("submit", { bubbles: true, cancelable: true }));
+    inspectResult(before, 6);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", function () {
+      window.setTimeout(runSmoke, 60);
+    }, { once: true });
+  } else {
+    window.setTimeout(runSmoke, 60);
+  }
+})();
+</script>
+</body>
+</html>

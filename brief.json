@@ -1,5 +1,5 @@
 {
-  "run_id": "run-1775491400454",
+  "run_id": "run-1775494086371",
   "job_index": 1,
   "params": {
     "owner_user_id": "user-1774822953462",
@@ -13,7 +13,7 @@
     "brief": "Évaluez l",
     "notes": "Growth module republish of an updated local artifact.",
     "import_notes": "Growth module republish of an updated local artifact.",
-    "growth_job_id": "growth-1775491333130",
+    "growth_job_id": "growth-1775494011278",
     "growth_slug": "calculateur-de-rayonnement-solaire-pour-espaces-verts-3",
     "growth_kind": "affiliate",
     "mode": "production",
@@ -35,8 +35,8 @@
     "forced_slug": "calculateur-de-rayonnement-solaire-pour-espaces-verts-3",
     "site_idea_title": "Calculateur de Rayonnement Solaire pour Espaces Verts",
     "site_idea_summary": "Évaluez l",
-    "import_source_path": "/var/lib/utility-site-studio/data/growth-republish/growth-1775491333130/calculateur-de-rayonnement-solaire-pour-espaces-verts-3",
-    "import_root_path": "/var/lib/utility-site-studio/data/growth-republish/growth-1775491333130/calculateur-de-rayonnement-solaire-pour-espaces-verts-3",
+    "import_source_path": "/var/lib/utility-site-studio/data/growth-republish/growth-1775494011278/calculateur-de-rayonnement-solaire-pour-espaces-verts-3",
+    "import_root_path": "/var/lib/utility-site-studio/data/growth-republish/growth-1775494011278/calculateur-de-rayonnement-solaire-pour-espaces-verts-3",
     "import_analysis_model": "preserved-analysis"
   },
   "import_analysis": {
@@ -55,6 +55,6 @@
     ],
     "suggested_slug": "calculateur-de-rayonnement-solaire-pour-espaces-verts-3"
   },
-  "source_path": "/var/lib/utility-site-studio/data/growth-republish/growth-1775491333130/calculateur-de-rayonnement-solaire-pour-espaces-verts-3",
-  "deploy_root": "/var/lib/utility-site-studio/data/growth-republish/growth-1775491333130/calculateur-de-rayonnement-solaire-pour-espaces-verts-3"
+  "source_path": "/var/lib/utility-site-studio/data/growth-republish/growth-1775494011278/calculateur-de-rayonnement-solaire-pour-espaces-verts-3",
+  "deploy_root": "/var/lib/utility-site-studio/data/growth-republish/growth-1775494011278/calculateur-de-rayonnement-solaire-pour-espaces-verts-3"
 }

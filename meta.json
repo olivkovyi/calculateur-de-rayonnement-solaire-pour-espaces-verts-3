@@ -11,17 +11,17 @@
   "country": "FR",
   "url": null,
   "expected_url": "https://calculateur-de-rayonnement-solaire-pour-espaces-verts-3.up.railway.app",
-  "created": "2026-04-06T16:03:21.441879+00:00",
+  "created": "2026-04-06T16:48:26.342577+00:00",
   "owner_user_id": "user-1774822953462",
   "owner_username": "admin",
   "owner_display_name": "Administrator",
   "status": "generated",
-  "run_id": "run-1775491400454",
+  "run_id": "run-1775494086371",
   "publish_target": "railway",
   "mode": "production",
   "source_type": "imported",
-  "import_source_path": "/var/lib/utility-site-studio/data/growth-republish/growth-1775491333130/calculateur-de-rayonnement-solaire-pour-espaces-verts-3",
-  "import_root_path": "/var/lib/utility-site-studio/data/growth-republish/growth-1775491333130/calculateur-de-rayonnement-solaire-pour-espaces-verts-3",
+  "import_source_path": "/var/lib/utility-site-studio/data/growth-republish/growth-1775494011278/calculateur-de-rayonnement-solaire-pour-espaces-verts-3",
+  "import_root_path": "/var/lib/utility-site-studio/data/growth-republish/growth-1775494011278/calculateur-de-rayonnement-solaire-pour-espaces-verts-3",
   "import_resolution_note": null,
   "analysis": {
     "model": "preserved-analysis",
@@ -52,7 +52,7 @@
   "growth": {
     "affiliate": {
       "status": "ready",
-      "updated_at": "2026-04-06T16:02:57.901485+00:00",
+      "updated_at": "2026-04-06T16:47:43.254659+00:00",
       "modes": [
         "anchor_text"
       ],
@@ -70,9 +70,9 @@
     "status": "ready",
     "synced_at": "2026-04-05T22:58:28.071214+00:00",
     "country": "FR",
-    "target_url": "https://calculateur-de-rayonnement-solaire-pour-espaces-verts-3.up.railway.app/",
-    "target_host": "calculateur-de-rayonnement-solaire-pour-espaces-verts-3.up.railway.app",
-    "current_live_url": "https://calculateur-de-rayonnement-solaire-pour-espaces-verts-3.up.railway.app",
+    "target_url": "https://site-cda445-production.up.railway.app/",
+    "target_host": "site-cda445-production.up.railway.app",
+    "current_live_url": "https://site-cda445-production.up.railway.app",
     "domain_rating": 85.0,
     "ahrefs_rank": 4974,
     "backlinks": 0,
@@ -90,7 +90,7 @@
     "shared_host": true,
     "metrics_scope": "shared-host",
     "shared_host_provider": "Railway",
-    "shared_host_note": "Сайт живёт на Railway shared host (calculateur-de-rayonnement-solaire-pour-espaces-verts-3.up.railway.app). DR и Ahrefs Rank в таком режиме частично отражают силу хост-домена, поэтому смотри в первую очередь на keywords, ref domains, traffic и top pages.",
+    "shared_host_note": "Сайт живёт на Railway shared host (site-cda445-production.up.railway.app). DR и Ahrefs Rank в таком режиме частично отражают силу хост-домена, поэтому смотри в первую очередь на keywords, ref domains, traffic и top pages.",
     "opportunity_score": 0,
     "opportunity_band": "dormant",
     "opportunity_label": "Dormant",
@@ -189,38 +189,38 @@
             "detail": "Editorial desktop layout avoids negative overlap offsets on the tool panel"
           }
         ],
-        "checked_at": 1775491378
+        "checked_at": 1775494063
       },
       "functional": {
         "status": "pass",
         "detail": "desktop: Le formulaire natif a mis a jour la zone de resultat. | mobile: Le formulaire natif a mis a jour la zone de resultat.",
-        "target_url": "http://127.0.0.1:40377/index.html?__qa=functional",
+        "target_url": "http://127.0.0.1:42615/index.html?__qa=functional",
         "mode": "native-form",
         "headline": "Profil d'ensoleillement estimé :",
         "primary_url": "",
         "desktop": {
           "status": "pass",
           "detail": "Le formulaire natif a mis a jour la zone de resultat.",
-          "target_url": "http://127.0.0.1:40377/index.html?__qa=functional",
+          "target_url": "http://127.0.0.1:42615/index.html?__qa=functional",
           "viewport": "desktop",
           "mode": "native-form",
           "headline": "Profil d'ensoleillement estimé :",
           "primary_url": "",
           "reported_viewport": "desktop",
-          "updated_at": 1775491379
+          "updated_at": 1775494064
         },
         "mobile": {
           "status": "pass",
           "detail": "Le formulaire natif a mis a jour la zone de resultat.",
-          "target_url": "http://127.0.0.1:40377/index.html?__qa=functional",
+          "target_url": "http://127.0.0.1:42615/index.html?__qa=functional",
           "viewport": "mobile",
           "mode": "native-form",
           "headline": "Profil d'ensoleillement estimé :",
           "primary_url": "",
           "reported_viewport": "mobile",
-          "updated_at": 1775491380
+          "updated_at": 1775494065
         },
-        "updated_at": 1775491380
+        "updated_at": 1775494065
       },
       "remote": {
         "status": "pass",
@@ -241,7 +241,7 @@
             "detail": "Remote HTML contains a body tag"
           }
         ],
-        "checked_at": 1775491381
+        "checked_at": 1775494066
       },
       "visual": {
         "status": "pass",
@@ -257,21 +257,21 @@
           "detail": "430x932 screenshot captured.",
           "relative_url": "/static/generated-qa/calculateur-de-rayonnement-solaire-pour-espaces-verts-3/calculateur-de-rayonnement-solaire-pour-espaces-verts-3-mobile.png"
         },
-        "updated_at": 1775491384
+        "updated_at": 1775494069
       },
       "lighthouse": {
         "status": "pass",
         "scores": {
-          "performance": 97,
+          "performance": 100,
           "accessibility": 95,
           "best-practices": 96,
           "seo": 100
         },
         "report_path": "/var/lib/utility-site-studio/data/qa/lighthouse/calculateur-de-rayonnement-solaire-pour-espaces-verts-3-lighthouse.json",
-        "updated_at": 1775491399
+        "updated_at": 1775494084
       },
       "qa_live_url": "https://site-cda445-production.up.railway.app",
-      "updated_at": "2026-04-06T16:03:19.787606+00:00"
+      "updated_at": "2026-04-06T16:48:04.699514+00:00"
     }
   }
 }
